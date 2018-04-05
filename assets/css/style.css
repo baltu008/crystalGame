@@ -1,6 +1,26 @@
-image {
-    width: 60px !important;
-    height: 50px !important;
-    float: left;
-    border-radius: 75px;
+body {
+    min-height: 100%;
+    background-image: url("../images/cave_background.jpg");
+}
+
+.container--jumbotron {
+    opacity: 0.9;
+}
+
+.jumbotron {
+    margin: auto;
+}
+
+.container--heading {
+    background-color: rgb(161, 96, 58);
+    border-radius: 5px;
+    margin: auto;
+}
+
+.crystal {
+    height: 130px !important;
+    width: 120px !important;
+    margin: 4px;
+    border: 2px solid rgb(0, 153, 255);
+    border-radius: 5px;
 }
