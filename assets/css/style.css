@@ -15,6 +15,16 @@ body {
     background-color: rgb(161, 96, 58);
     border-radius: 5px;
     margin: auto;
+    width: fit-content;
+}
+
+.randNumber {
+    margin: 0 auto;
+}
+
+.fourCrystals {
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .crystal {

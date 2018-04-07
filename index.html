@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <div class="cotainer container--jumbotron">
+    <div class="container container--jumbotron">
         <div class="row align-self-center">
             <div class="jumbotron mt-4 mb-4">
                 <div class="row container--heading col-sm-5">
@@ -38,7 +38,7 @@
                         <li>Each time when the game starts, the game will change the values of each crystal.</li>
                     </div>
                 </div>
-                <div class="randNumber col-lg-4 mt-3">
+                <div class="randNumber col-2 mt-3">
                     <div class="card">
                         <h5 class="card-header">Number to Reach:</h5>
                         <div class="card-body">
@@ -56,21 +56,43 @@
                 </div>
 
                 <!-- Number Guessed box -->
-                <div class="col-lg-4 mt-3">
-                    <div class="card">
-                        <h5 class="card-header">Number Guessed:</h5>
-                        <div class="card-body">
-                            <h3 id="guessedNumber"></h3>
+                <div class="row">
+                    <div class="col-3 mt-3">
+                        <div class="card">
+                            <h5 class="card-header">Number Guessed:</h5>
+                            <div class="card-body">
+                                <h3 id="guessedNumber"></h3>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Total Score box -->
-                <div class="col-lg-4 mt-3">
-                    <div class="card">
-                        <h5 class="card-header">Your total score is:</h5>
-                        <div class="card-body">
-                            <h3 id="addedScore"></h3>
+
+                    <!-- Total Score box -->
+                    <div class="col-3 mt-3">
+                        <div class="card">
+                            <h5 class="card-header">Your total score is:</h5>
+                            <div class="card-body">
+                                <h3 id="addedScore"></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row col-6 mt-3">
+                        <div class="col-6">
+                            <div class="card">
+                                <h5 class="card-header">Wins:</h5>
+                                <div class="card-body">
+                                    <h3 id="wins"></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card">
+                                <h5 class="card-header">Losses:</h5>
+                                <div class="card-body">
+                                    <h3 id="losses"></h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

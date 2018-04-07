@@ -1,38 +1,81 @@
+var targetNumber;
+
+//Declare global variables
+var blueCrystal;
+var greenCrystal;
+var redCrystal;
+var yellowCrystal;
+var score;
+var wins = 0;
+var losses = 0;
+
+function init() { 
+    targetNumber = Math.floor((Math.random() * 51) +1 );
+
+    document.getElementById("randomNumber").innerHTML = targetNumber;
+
+    //Randomize each crystal and set score to zero
+    blueCrystal = Math.floor((Math.random() * 11) +1 );
+    greenCrystal = Math.floor((Math.random() * 11) +1 );
+    redCrystal = Math.floor((Math.random() * 11) +1 );
+    yellowCrystal = Math.floor((Math.random() * 11) +1 );
+    score = 0;
+}
 $(document).ready(function () {
 
-    var op = "";
-    var score, red, green, red, yellow;
+    //Get random number and post to DOM
+    targetNumber = Math.floor((Math.random() * 51) +1 );
 
-    document.getElementById("randomNumber").innerHTML =
-    Math.floor(Math.random() * 51);
+    document.getElementById("randomNumber").innerHTML = targetNumber;
 
-    // setInterval(function() {
-    //     var number = Math.floor(Math.random() * 50);
-    //     $('#randomNumber').html(number);
-    // });
+    //Randomize each crystal and set score to zero
+    blueCrystal = Math.floor((Math.random() * 11) +1 );
+    greenCrystal = Math.floor((Math.random() * 11) +1 );
+    redCrystal = Math.floor((Math.random() * 11) +1 );
+    yellowCrystal = Math.floor((Math.random() * 11) +1 );
+    score = 0;
+    wins = 0;
+    losses = 0;
 
+    //set "on click" and add value to score
     $('#blue').on("click", function () {
-        $('#guessedNumber').html(9);
+        $('#guessedNumber').html(blueCrystal);
+        score += blueCrystal;
+        $('#addedScore').html(score);
     });
 
     $('#green').on("click", function () {
-        $('#guessedNumber').html(3);
+        $('#guessedNumber').html(greenCrystal);
+        score += greenCrystal;
+        $('#addedScore').html(score);
     });
 
     $('#red').on("click", function () {
-        $('#guessedNumber').html(1);
+        $('#guessedNumber').html(redCrystal);
+        score += redCrystal;
+        $('#addedScore').html(score);
     });
 
     $('#yellow').on("click", function () {
-        $('#guessedNumber').html(6);
+        $('#guessedNumber').html(yellowCrystal);
+        score += yellowCrystal;
+        $('#addedScore').html(score);
     });
 
+    //Determine whether player wins or loses
+    $('.crystal').on("click", function () {
+        if (score === targetNumber) {
+            $('#addedScore').html("You win!");
+            wins++;
+            $('#wins').text(wins);
+            init();
+        }
 
-    // $('.crystal').on("click", function() {
-    //     var math_it_up = {
-    //         'click': function (x, y) { return x + y },
-    //     };
-    //     $('#addedScore').html(math_it_up[addedScore](parseInt(left)));
-    // });
-
+        else if (score >= targetNumber) {
+            $('#addedScore').html("You lose!!");
+            losses++;
+            $('#losses').text(losses);
+            init();
+        }
+    });
 });

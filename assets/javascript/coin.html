@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="heads">
+        <h3>Heads:</h3>
+    </div>
+    <div id="tails">
+        <h3>Tails:</h3>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script>
+
+
+        function coinFlip() {
+            let rand = Math.floor(Math.random() * 2);
+            console.log(rand ? 'heads' : 'tails');
+        }
+
+        let timer = setInterval(coinFlip, 1000)
+
+        setTimeout(() => clearInterval(timer), 5000);
+
+
+
+        /**
+         *@param {string} param
+         *@return {boolean}
+         */
+        
+         function checker(param) {
+            let result = (param.split('').reverse().join(''))
+            console.log(result === param);
+        }
+
+        checker('mom');
+        checker('mon');
+        checker('race car'); //(why doesn't this work?)
+
+            // if (rand === 1) {
+            //     console.log('heads');
+            // } else {
+            //     console.log('tails');
+            // }
+            // rand ? console.log('heads') : console.log('tails')
+
+        // setTimeout(function () {
+        //     console.log("it's been 5 seconds");
+        // }, 5000);
+
+        // setTimeout(function () {
+        //     clearInterval(timer);
+        // }, 5000);
+
+        // let timer = setInterval(function () {
+        //     console.log('1 second');
+        // }, 1000);
+
+        // setTimeout(function () {
+        //     clearInterval(timer);
+        // }, 5000);
+    </script>
+</body>
+
+</html>
